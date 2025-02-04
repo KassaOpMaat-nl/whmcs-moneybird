@@ -34,9 +34,9 @@ function moneybird_config() {
     $config = array(
       'name'        => 'Moneybird',
       'description' => 'This module integrates Moneybird into WHMCS',
-      'author'      => 'Sensson',
+      'author'      => 'KassaOpMaat.nl',
       'language'    => 'english',
-      'version'     => '1.0.2',
+      'version'     => '1.0.3',
       'fields'      => array(
         'AccessToken' => array(
           'FriendlyName' => 'MoneyBird access token',
