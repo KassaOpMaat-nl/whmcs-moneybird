@@ -209,8 +209,12 @@ class Invoice extends \WHMCS\Billing\Invoice {
 
     // Store the invoice and make it final by 'sending' it
     $invoice = $salesInvoice->save();
-    $invoice->sendInvoice('Simplerinvoicing');
-    $invoice->sendInvoice('Email');
+
+    if($this->client->groupId == '1') {
+      $invoice->sendInvoice('Simplerinvoicing');
+    } else {
+      $invoice->sendInvoice('Email');
+    }
 
     // sendInvoice doesn't return the invoice id, fetch it manually
     $invoice = $moneybird->salesInvoice()->find($invoice->id);
